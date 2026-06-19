@@ -1,4 +1,4 @@
-const API = "http://127.0.0.1:8001";
+const API = window.location.origin;
 
 // --------------------
 // SAVE CHAT
@@ -55,7 +55,7 @@ async function sendMessage() {
 
     try {
 
-        const response = await fetch(`${API}/generate`, {
+        const response = await fetch(`${API_URL}/generate`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -113,7 +113,7 @@ async function loadHistory() {
 
     try {
 
-        const response = await fetch(`${API}/history`);
+        const response = await fetch(`${API_URL}/history`);
         const data = await response.json();
 
         chatBox.innerHTML = `
@@ -156,7 +156,7 @@ async function clearHistory() {
 
     try {
 
-        await fetch(`${API}/clear`, {
+        await fetch(`${API_URL}/clear`, {
             method: "DELETE"
         });
 
@@ -180,7 +180,7 @@ async function showDestinations() {
 
     try {
 
-        const response = await fetch(`${API}/destinations`);
+        const response = await fetch(`${API_URL}/destinations`);
         const data = await response.json();
 
         chatBox.innerHTML = `
