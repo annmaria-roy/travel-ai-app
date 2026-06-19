@@ -1,4 +1,4 @@
-const API = window.location.origin;
+const API= "https://travel-ai-app-gbm2.onrender.com";
 
 // --------------------
 // SAVE CHAT
