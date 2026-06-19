@@ -1,3 +1,4 @@
+from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -10,6 +11,8 @@ import sqlite3
 load_dotenv()
 
 app = FastAPI()
+
+app.mount("/static", StaticFiles(directory="."), name="static")
 
 @app.get("/")
 def home():
