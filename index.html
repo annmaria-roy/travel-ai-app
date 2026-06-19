@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Travel Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+
+        <h1>✈ Travel AI</h1>
+
+        <button onclick="newChat()">+ New Chat</button>
+        <button onclick="loadHistory()">📜 History</button>
+        <button onclick="showDestinations()">🌍 Destinations</button>
+        <button onclick="showTips()">💡 Travel Tips</button>
+        <button onclick="clearHistory()">🗑 Clear History</button>
+
+    </div>
+
+    <div class="main">
+
+        <div class="header">
+            AI Travel Planner
+        </div>
+
+        <div class="quick-prompts">
+
+            <button onclick="quickPrompt('3 day trip to Munnar')">
+                Munnar
+            </button>
+
+            <button onclick="quickPrompt('Budget Goa Trip')">
+                Goa
+            </button>
+
+            <button onclick="quickPrompt('Wayanad itinerary')">
+                Wayanad
+            </button>
+
+            <button onclick="quickPrompt('Kashmir itinerary')">
+                Kashmir
+            </button>
+
+        </div>
+
+        <div id="chatBox" class="chat-box"></div>
+
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Ask about your trip..."
+            >
+
+            <button type="button" onclick="sendMessage()">
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
