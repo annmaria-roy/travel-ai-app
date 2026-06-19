@@ -55,7 +55,7 @@ async function sendMessage() {
 
     try {
 
-        const response = await fetch(`${API_URL}/generate`, {
+        const response = await fetch(`${API}/generate`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -113,7 +113,7 @@ async function loadHistory() {
 
     try {
 
-        const response = await fetch(`${API_URL}/history`);
+        const response = await fetch(`${API}/history`);
         const data = await response.json();
 
         chatBox.innerHTML = `
@@ -156,7 +156,7 @@ async function clearHistory() {
 
     try {
 
-        await fetch(`${API_URL}/clear`, {
+        await fetch(`${API}/clear`, {
             method: "DELETE"
         });
 
@@ -180,7 +180,7 @@ async function showDestinations() {
 
     try {
 
-        const response = await fetch(`${API_URL}/destinations`);
+        const response = await fetch(`${API}/destinations`);
         const data = await response.json();
 
         chatBox.innerHTML = `
